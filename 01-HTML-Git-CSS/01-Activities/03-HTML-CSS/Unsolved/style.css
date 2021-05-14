@@ -1,0 +1,6 @@
+/* apply styles to <header> */
+header {
+    padding: 20px 35px;
+    background-color: black;
+    color: white;
+}
