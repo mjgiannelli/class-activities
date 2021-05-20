@@ -1,47 +1,70 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8" />
-    <title>My First Function</title>
-  </head>
-  <body>
-    <h1 style="text-align:center; margin-top:20%;">
-      Open the console to see the functions at work!
-    </h1>
 
-    <script type="text/javascript">
-      // TODO: Create a function called "adder" that takes three arguments (x, y, z) and returns their sum
+<head>
+  <meta charset="UTF-8" />
+  <title>My First Function</title>
+</head>
 
-      // TODO: Create a function called "multiplier" that takes three arguments (x, y, z) and returns their product
+<body>
+  <h1 style="text-align:center; margin-top:20%;">
+    Open the console to see the functions at work!
+  </h1>
 
-      // TODO: Create a function called "isString" that takes three arguments (x, y, z) and checks if the type of all three is a string
+  <script type="text/javascript">
+    // TODO: Create a function called "adder" that takes three arguments (x, y, z) and returns their sum
+    function adder(x, y, z,) {
+      return x + y + z;
+    };
+    // TODO: Create a function called "multiplier" that takes three arguments (x, y, z) and returns their product
+    function multiplier(x, y, z) {
+      return x * y * z;
+    };
+    // TODO: Create a function called "isString" that takes three arguments (x, y, z) and checks if the type of all three is a string
+    function isString(x, y, z) {
+      if (typeof x === "string" && typeof y === "string" && typeof z === "string") {
+        console.log("They are all strings!");
+      }
+      else {
+        console.log("They are NOT all strings!");
+      }
+    };
+    // TODO: Create a function called "vowelChecker" that takes one argument (x) and checks if the first letter is a vowel
+    function vowelChecker(x) {
+      var firstLet = x.charAt(0).toUpperCase();
+      var vowels = ["A", "E", "I", "O", "U"]
+      if (vowels.includes(firstLet)) {
+        console.log("The first letter is a vowel!");
+      }
+      else {
+        console.log("The first letter is NOT a vowel!");
+      }
+    };
+    // Check the browser console to see if the following is logged correctly
+    var sum = adder(1, 2, 3);
 
-      // TODO: Create a function called "vowelChecker" that takes one argument (x) and checks if the first letter is a vowel
+    console.log('The result of adder() is ' + sum);
 
-      // Check the browser console to see if the following is logged correctly
-      var sum = adder(1, 2, 3);
+    var product = multiplier(2, 3, 4);
 
-      console.log('The result of adder() is ' + sum);
+    console.log('The result of multiplier() is ' + product);
 
-      var product = multiplier(2, 3, 4);
+    var stringCheckOne = isString('Jared', 'Bad', 'Monkey');
 
-      console.log('The result of multiplier() is ' + product);
+    console.log(stringCheckOne);
 
-      var stringCheckOne = isString('Jared', 'Bad', 'Monkey');
+    var stringCheckTwo = isString(2, 'Way', 'Street');
 
-      console.log(stringCheckOne);
+    console.log(stringCheckTwo);
 
-      var stringCheckTwo = isString(2, 'Way', 'Street');
+    var vowelCheckOne = vowelChecker('Eek');
 
-      console.log(stringCheckTwo);
+    console.log(vowelCheckOne);
 
-      var vowelCheckOne = vowelChecker('Eek');
+    var vowelCheckTwo = vowelChecker('Nah');
 
-      console.log(vowelCheckOne);
+    console.log(vowelCheckTwo);
+  </script>
+</body>
 
-      var vowelCheckTwo = vowelChecker('Nah');
-
-      console.log(vowelCheckTwo);
-    </script>
-  </body>
 </html>
