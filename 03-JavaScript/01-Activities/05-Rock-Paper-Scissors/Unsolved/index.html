@@ -1,34 +1,78 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Rock Paper Scissors</title>
-  </head>
-  <body>
-    <h1 style="text-align:center; margin-top:20%;">
-      Let's play Rock Paper Scissors!<br />Refresh to play again!
-    </h1>
-    <script type="text/javascript">
-      // TODO: Create an array of the three game choices (Rock, Paper, or Scissors).
-      var gameChoices
 
-      // TODO: Create variables to hold the number of wins, losses, and ties. They start at 0.
-      var
-      var
-      var
+<head>
+  <meta charset="UTF-8" />
+  <title>Rock Paper Scissors</title>
+</head>
 
-      for (var i = 0; i < 3; i++) {
-        // TODO: Randomly choose a choice from the gameChoices array. This is the computer's turn.
-        var computerTurn
+<body>
+  <h1 style="text-align:center; margin-top:20%;">
+    Let's play Rock Paper Scissors!<br />Refresh to play again!
+  </h1>
+  <script type="text/javascript">
+    // TODO: Create an array of the three game choices (Rock, Paper, or Scissors).
+    var gameChoices = ["rock", "paper", "scissors"];
 
-        // TODO: Collect the user's response and convert to lower case. This is the user's turn.
-        var userTurn
+    // TODO: Create variables to hold the number of wins, losses, and ties. They start at 0.
+    var wins = 0;
+    var losses = 0;
+    var ties = 0;
 
-        // TODO: Create the game logic to run if the user chooses a valid game choice
+    function compare(cpu, player) {
+      if (cpu === player) {
+        ties += 1;
+        alert("You tie!");
       }
+      else if (cpu === "rock" && player === "scissors") {
+        losses += 1;
+        alert("You lose!");
+      }
+      else if (cpu === "rock" && player === "paper") {
+        wins += 1;
+        alert("You win!");
+      }
+      else if (cpu === "scissors" && player === "rock") {
+        wins += 1;
+        alert("You win!");
+      }
+      else if (cpu === "scissors" && player === "paper") {
+        losses += 1;
+        alert("You lose!");
+      }
+      else if (cpu === "paper" && player === "rock") {
+        losses += 1;
+        alert("You lose!");
+      }
+      else if (cpu === "paper" && player === "scissors") {
+        wins += 1;
+        alert("You win!");
+      }
+      else {
+        alert("you need to return a valid answer!");
+      }
+    }
 
-      // TODO: When the game is over, alert the final total to the user. We can use the \n character to make a line break.
-      alert();
-    </script>
-  </body>
+    for (var i = 0; i < 3; i++) {
+      // TODO: Randomly choose a choice from the gameChoices array. This is the computer's turn.
+      var computerTurn = gameChoices[Math.floor(Math.random() * gameChoices.length)];
+
+      // TODO: Collect the user's response and convert to lower case. This is the user's turn.
+      var userTurn = prompt("Please choose 'rock', 'paper', or 'scissors'.").toLowerCase();
+
+
+      // TODO: Create the game logic to run if the user chooses a valid game choice
+      if (gameChoices.includes(userTurn)) {
+        compare(computerTurn, userTurn);
+      }
+      else {
+        alert("please provide a valid response!");
+      }
+    }
+
+    // TODO: When the game is over, alert the final total to the user. We can use the \n character to make a line break.
+    alert("Total Wins: " + wins + ", Total Losses: " + losses + ", Total Ties: " + ties);
+  </script>
+</body>
+
 </html>
