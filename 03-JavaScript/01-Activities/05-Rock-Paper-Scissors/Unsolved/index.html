@@ -22,30 +22,37 @@
     function compare(cpu, player) {
       if (cpu === player) {
         ties += 1;
+        alert("Computer chose " + cpu);
         alert("You tie!");
       }
       else if (cpu === "rock" && player === "scissors") {
         losses += 1;
+        alert("Computer chose " + cpu);
         alert("You lose!");
       }
       else if (cpu === "rock" && player === "paper") {
         wins += 1;
+        alert("Computer chose " + cpu);
         alert("You win!");
       }
       else if (cpu === "scissors" && player === "rock") {
         wins += 1;
+        alert("Computer chose " + cpu);
         alert("You win!");
       }
       else if (cpu === "scissors" && player === "paper") {
         losses += 1;
+        alert("Computer chose " + cpu);
         alert("You lose!");
       }
       else if (cpu === "paper" && player === "rock") {
         losses += 1;
+        alert("Computer chose " + cpu);
         alert("You lose!");
       }
       else if (cpu === "paper" && player === "scissors") {
         wins += 1;
+        alert("Computer chose " + cpu);
         alert("You win!");
       }
       else {
@@ -67,6 +74,7 @@
       }
       else {
         alert("please provide a valid response!");
+        i--;
       }
     }
 

@@ -23,10 +23,10 @@
     // TODO: Create a function called "isString" that takes three arguments (x, y, z) and checks if the type of all three is a string
     function isString(x, y, z) {
       if (typeof x === "string" && typeof y === "string" && typeof z === "string") {
-        console.log("They are all strings!");
+        return "They are strings!";
       }
       else {
-        console.log("They are NOT all strings!");
+        return "They are NOT all strings!";
       }
     };
     // TODO: Create a function called "vowelChecker" that takes one argument (x) and checks if the first letter is a vowel
@@ -34,10 +34,10 @@
       var firstLet = x.charAt(0).toUpperCase();
       var vowels = ["A", "E", "I", "O", "U"]
       if (vowels.includes(firstLet)) {
-        console.log("The first letter is a vowel!");
+        return "The first letter is a vowel!";
       }
       else {
-        console.log("The first letter is NOT a vowel!");
+        return "The first letter is NOT a vowel!";
       }
     };
     // Check the browser console to see if the following is logged correctly
