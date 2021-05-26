@@ -34,6 +34,6 @@ body.appendChild(newDiv2);
 var targetH3 = document.querySelector("#favFoods");
 var newUl = document.createElement("ul");
 newUl.innerHTML = "<li>Spaghetti</li><li>Pizza</li><li>Steak</li><li>Burgers</li>"
-targetH3.appendChild(newUl);
+newDiv2.appendChild(newUl);
 
 
