@@ -1,4 +1,4 @@
-# DOM manipulation
+               # DOM manipulation
 
 In this activity, you are going to use DOM methods to create an entire webpage.
 

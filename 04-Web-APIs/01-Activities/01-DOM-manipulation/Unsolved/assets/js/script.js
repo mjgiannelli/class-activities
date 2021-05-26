@@ -31,9 +31,14 @@ var newDiv2 = document.createElement("div");
 newDiv2.innerHTML = "<h3 id='favFoods'>List of favorite foods</h3>";
 body.appendChild(newDiv2);
 
-var targetH3 = document.querySelector("#favFoods");
 var newUl = document.createElement("ul");
 newUl.innerHTML = "<li>Spaghetti</li><li>Pizza</li><li>Steak</li><li>Burgers</li>"
 newDiv2.appendChild(newUl);
 
-
+//alternative 
+var newList = ["Pie", "Pizza", "Burgers"]
+for (var i = 0; i < newList.length; i++) {
+    var foodItem = document.createElement("li");
+    foodItem.textContent = newList[i];
+    newUl.appendChild(foodItem);
+}
