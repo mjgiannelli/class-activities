@@ -30,5 +30,4 @@ askQuestions();
 
 // TODO: At the end of the game, alert the user with the final score
 
-alert("Congratulations! You finished with a total score of " + score + "!");
-
+alert("Congratulations! You finished with a total score of " + score + "/5!");
