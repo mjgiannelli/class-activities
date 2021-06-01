@@ -10,11 +10,11 @@
   <h1>Click to Eat Sandwich</h1>
   <!-- Create three button elements each with an id and corresponding content for our sandwiches -->
   <button type='button' id='pbj'>PB&J</button>
-  <div id="image-div"></div>
+  <div id="pbjImage-div"></div>
   <button type='button' id='turkey'>Turkey</button>
-  <div id="image-div"></div>
+  <div id="turkeyImage-div"></div>
   <button type='button' id='hamAndCheese'>Ham & Cheese</button>
-  <div id="image-div"></div>
+  <div id="hamAndCheeseImage-div"></div>
 
   <!-- BONUS: Render an image for each click event. You will need to declare an empty `<div>` with an id of `#image-div` for this -->
 
@@ -47,21 +47,36 @@
     // With this even if our ids are created at a later date our events will still always work
     //
     $('#pbj').click(function () {
+      $('#pbjImage-div').prepend($('<img>', {
+        src: 'https://toasterovenlove.com/wp-content/uploads/Toasted-Peanut-Butter-and-Jelly-2.jpg',
+        width: '100',
+        height: '100'
+      }))
       pbjSandwich.timesEaten++;
       alert(pbjSandwich.funFact);
-      alert('You have eaten ' + pbjSandwich.timesEaten + ' pb&j sandwiches!')
+      alert('You have eaten ' + pbjSandwich.timesEaten + ' pb&j sandwiches!');
     })
 
     $('#turkey').click(function () {
+      $('#turkeyImage-div').prepend($('<img>', {
+        src: 'https://lh3.googleusercontent.com/9FZ1T3uK6H4mtKJAlwszGVzWdaPVdTCzwRfsCujmEckvkLPmjzZj0ISN3NgKzEed7Gzz1YXpzlVW38VSG9C1SA=s640-c-rw-v1-e365',
+        width: '100',
+        height: '100'
+      }))
       turkeySandwich.timesEaten++;
       alert(turkeySandwich.funFact);
-      alert('You have eaten ' + turkeySandwich.timesEaten + ' turkey sandwiches!')
+      alert('You have eaten ' + turkeySandwich.timesEaten + ' turkey sandwiches!');
     })
 
     $('#hamAndCheese').click(function () {
+      $('#hamAndCheeseImage-div').prepend($('<img>', {
+        src: 'https://assets.kraftfoods.com/recipe_images/opendeploy/53460_SGS_%20K2304%20V0_OR1_FO_640x428.jpg',
+        width: '100',
+        height: '100'
+      }))
       hamAndCheeseSandwich.timesEaten++;
       alert(hamAndCheeseSandwich.funFact);
-      alert('You have eaten ' + hamAndCheeseSandwich.timesEaten + ' ham & cheese sandwiches!')
+      alert('You have eaten ' + hamAndCheeseSandwich.timesEaten + ' ham & cheese sandwiches!');
     })
       //
   </script>
