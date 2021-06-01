@@ -1,32 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>jQuery Sandwich Click</title>
-  </head>
 
-  <body>
-    <h1>Click to Eat Sandwich</h1>
-    <!-- Create three button elements each with an id and corresponding content for our sandwiches -->
+<head>
+  <meta charset="UTF-8" />
+  <title>jQuery Sandwich Click</title>
+</head>
 
-    <!-- BONUS: Render an image for each click event. You will need to declare an empty `<div>` with an id of `#image-div` for this -->
+<body>
+  <h1>Click to Eat Sandwich</h1>
+  <!-- Create three button elements each with an id and corresponding content for our sandwiches -->
+  <button type='button' id='pbj'>PB&J</button>
+  <div id="image-div"></div>
+  <button type='button' id='turkey'>Turkey</button>
+  <div id="image-div"></div>
+  <button type='button' id='hamAndCheese'>Ham & Cheese</button>
+  <div id="image-div"></div>
 
-    <!-- Link to the jQuery Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- BONUS: Render an image for each click event. You will need to declare an empty `<div>` with an id of `#image-div` for this -->
 
-    <script type="text/javascript">
-      // Create three global variables for tracking the number of sandwiches eaten
+  <!-- Link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script type="text/javascript">
+    // Create three global variables for tracking the number of sandwiches eaten
+    //
+    var pbjSandwich = {
+      timesEaten: 0,
+      funFact: "Fun witty fact about pb&j!!"
+    }
+
+    var turkeySandwich = {
+      timesEaten: 0,
+      funFact: "Fun witty fact about turkey sandwiches!!"
+    }
+
+    var hamAndCheeseSandwich = {
+      timesEaten: 0,
+      funFact: "Fun witty fact about ham & cheese sandwiches!!"
+    }
+
+    //
+
+    // Here we create various "on click" events which capture clicks
+    // Inside each click event is the code to create an alert, update the counter, and show the updated count.
+    // Take note that you can chain events onto an element
+    // With this even if our ids are created at a later date our events will still always work
+    //
+    $('#pbj').click(function () {
+      pbjSandwich.timesEaten++;
+      alert(pbjSandwich.funFact);
+      alert('You have eaten ' + pbjSandwich.timesEaten + ' pb&j sandwiches!')
+    })
+
+    $('#turkey').click(function () {
+      turkeySandwich.timesEaten++;
+      alert(turkeySandwich.funFact);
+      alert('You have eaten ' + turkeySandwich.timesEaten + ' turkey sandwiches!')
+    })
+
+    $('#hamAndCheese').click(function () {
+      hamAndCheeseSandwich.timesEaten++;
+      alert(hamAndCheeseSandwich.funFact);
+      alert('You have eaten ' + hamAndCheeseSandwich.timesEaten + ' ham & cheese sandwiches!')
+    })
       //
-      // YOUR CODE HERE
-      //
+  </script>
+</body>
 
-      // Here we create various "on click" events which capture clicks
-      // Inside each click event is the code to create an alert, update the counter, and show the updated count.
-      // Take note that you can chain events onto an element
-      // With this even if our ids are created at a later date our events will still always work
-      //
-      // YOUR CODE HERE
-      //
-    </script>
-  </body>
 </html>
