@@ -1,27 +1,80 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Bootstrap Card Layout Activity</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Import Bootstrap CDN -->
-  </head>
+  <title>Bootstrap Card Layout Activity</title>
 
-  <body>
-    <!-- Add a responsive Navbar -->
+  <!-- Import Bootstrap CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
 
-    <div class="container">
-      <!-- Create rows and columns to match the given design -->
+<body>
+  <!-- Add a responsive Navbar -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Navbar</a>
 
-      <!-- Add a heading "About Me" -->
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <!-- Add an image -->
-
-      <!-- Add a paragraph of text -->
-
-      <!-- Add a Card -->
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
     </div>
-  </body>
+  </nav>
+
+  <div class="container">
+    <!-- Create rows and columns to match the given design -->
+    <div class='row'>
+      <div class='col-3 h1' style='font-size: 56px'>About Me</div>
+    </div>
+
+    <!-- Add an image -->
+    <div class='row'>
+      <img class='col-3 border border-dark rounded' src=https://via.placeholder.com/150>
+      <!-- Add a paragraph of text -->
+      <p class='col-6'>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nobis repellat expedita itaque quisquam tempora
+        maiores modi ipsa, magnam soluta perspiciatis porro, sequi hic consequuntur explicabo architecto, rerum impedit
+        dolore! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nobis repellat expedita itaque quisquam
+        tempora
+        maiores modi ipsa, magnam soluta perspiciatis porro, sequi hic consequuntur explicabo architecto, rerum impedit
+        dolore! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nobis repellat expedita itaque quisquam
+        tempora
+        maiores modi ipsa, magnam soluta perspiciatis porro, sequi hic consequuntur explicabo architecto, rerum impedit
+        dolore!
+      </p>
+        <!-- Add a Card -->
+    <div class='col-3'>
+      <div class='card'>
+        <div class='card-body'>
+          <h3 class='card-title font-weight-bold'>Card title</h3>
+          <h4 class='card-title'>Card subtitle</h4>
+          <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
 </html>
