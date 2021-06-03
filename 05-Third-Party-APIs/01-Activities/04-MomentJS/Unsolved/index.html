@@ -1,44 +1,68 @@
 <!DOCTYPE html>
 
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Moment JS Exercises</title>
-  </head>
 
-  <body>
-    <h1>✨ Open the console to see the magic ✨</h1>
+<head>
+  <meta charset="UTF-8" />
+  <title>Moment JS Exercises</title>
+</head>
 
-    <script src="https://code.jquery.com/jquery.js"></script>
+<body>
+  <h1>✨ Open the console to see the magic ✨</h1>
 
-    <!-- Import Moment.js here -->
+  <script src="https://code.jquery.com/jquery.js"></script>
 
-    <script>
-      var randomDate = '02/23/1999';
-      // Convert the `randomDate` to the "MM/DD/YYYY" format using `moment()`
+  <!-- Import Moment.js here -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+  <script>
+    var randomDate = '02-23-1999';
+    // Convert the `randomDate` to the "MM/DD/YYYY" format using `moment()`
+    var convertedDate = moment(randomDate, "MM-DD-YYYY").format('MM/DD/YYYY')
+    // Log `convertedDate` into the console
+    console.log(convertedDate);
+
+    // Convert `convertedDate` into three other date formats of your choice using `.format()`
+    // Log them into the console
+    convertedDate = moment(convertedDate, 'MM/DD/YYYY').format("dddd, MMMM Do YYYY, h:mm:ss a")
+    console.log(convertedDate);
+
+    convertedDate = moment(convertedDate, "dddd, MMMM Do YYYY, h:mm:ss a").format("'YYYY MM DD'")
+    console.log(convertedDate);
+
+    convertedDate = moment(convertedDate, 'YYYY MM DD').format('MM YYYY DD');
+    console.log(convertedDate);
+
+    convertedDate = moment(convertedDate, 'MM YYYY DD').format("MM-DD-YYYY");
+    console.log(convertedDate);
+    // Calculate the time in years, months, days between today and the `convertedDate` using `.toNow()` and `.diff()`
+    // Log them into the console
+    var years = moment().diff(convertedDate, 'years');
+    var months = moment().diff(convertedDate, 'months');
+    var days = moment().diff(convertedDate, 'days');
+
+    console.log(years);
+    console.log(months);
+    console.log(days);
+
+    var years = moment(convertedDate).toNow('years');
+
+    console.log(years);
+
+    // Calculate the number of days between the `convertedDate` and 02/14/2001
+    // Log it into the console
+    var days = moment('02/14/2001').diff(convertedDate, 'days');
+    console.log(days);
+
+    // Determine what day of the week and what week of the year the `convertedDate` falls on
+    // Log them into the console
+    var dayOfWeek = moment(convertedDate).weekday();
+    var weekOfYear = moment(convertedDate).week();
+
+    console.log(dayOfWeek);
+    console.log(weekOfYear);
       //
-      // Log `convertedDate` into the console
-      //
-      console.log('----------------------------------------');
+  </script>
+</body>
 
-      // Convert `convertedDate` into three other date formats of your choice using `.format()`
-      // Log them into the console
-      //
-      console.log('----------------------------------------');
-
-      // Calculate the time in years, months, days between today and the `convertedDate` using `.toNow()` and `.diff()`
-      // Log them into the console
-      //
-      console.log('----------------------------------------');
-
-      // Calculate the number of days between the `convertedDate` and 02/14/2001
-      // Log it into the console
-      //
-      console.log('----------------------------------------');
-
-      // Determine what day of the week and what week of the year the `convertedDate` falls on
-      // Log them into the console
-      //
-    </script>
-  </body>
 </html>
