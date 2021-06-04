@@ -16,9 +16,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
   <script>
-    var randomDate = '02-23-1999';
-    // Convert the `randomDate` to the "MM/DD/YYYY" format using `moment()`
-    var convertedDate = moment(randomDate, "MM-DD-YYYY").format('MM/DD/YYYY')
+    var randomDate = '02/23/1999';
+    // Convert the `randomDate` to the "MM/DD/YY" format using `moment()`
+    var convertedDate = moment(randomDate, "MM/DD/YYYY").format('MM/DD/YY')
     // Log `convertedDate` into the console
     console.log(convertedDate);
 
@@ -45,7 +45,7 @@
     console.log(months);
     console.log(days);
 
-    var years = moment(convertedDate).toNow('years');
+    var years = moment(convertedDate).toNow('months');
 
     console.log(years);
 
