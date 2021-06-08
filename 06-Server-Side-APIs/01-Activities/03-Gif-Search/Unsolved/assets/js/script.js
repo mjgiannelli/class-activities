@@ -3,9 +3,7 @@
 function myFunction() {
   // Create a variable that will use `document.querySelector()` to target the `id` of the input 
   // Use `.value` to capture the value of the input and store it in the variable
-  var inputEl = document.querySelector('#searchTerm');
-
-  var searchTerm = inputEl.value.trim();
+  var searchTerm = document.querySelector('#searchTerm').value.trim();
 
   // Make a `fetch` request concatenating that variable to the query URL
   // Remember to add your API key at the end
