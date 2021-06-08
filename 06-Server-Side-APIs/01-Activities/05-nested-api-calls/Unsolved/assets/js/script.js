@@ -19,14 +19,15 @@ function myFunction() {
       h2El.textContent = randomTitle;
 
       console.log(h2El);
+
       divHeaderEl.appendChild(h2El)
 
       var rating = document.getElementById('rating').value;
       console.log(rating);
       // Return a fetch request to the Giphy search API with the article title and rating parameters
       // YOUR CODE HERE
-      fetch(
-        'https://api.giphy.com/v1/gifs/search?api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN&q=' + randomTitle
+      return fetch(
+        'https://api.giphy.com/v1/gifs/search?api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN&q=' + randomTitle + "&rating=" + rating
       )
       // Remember to add your API key at the end
     })
