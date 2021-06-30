@@ -1,10 +1,16 @@
 const fs = require('fs');
 
-var profileDataArgs = process.argv.slice(2, process.argv.length);
+let dataArgs = process.argv.slice(2, process.argv.length);
 
 const writeFile = fileContent => {
+    tempArray = [];
+
+    fileContent.forEach(item => {
+        tempArray.push(item);
+    })
+
     return new Promise((resolve, reject) => {
-        fs.writeFile('./message.txt', fileContent, err => {
+        fs.writeFile('./message.txt', tempArray.join(' '), err => {
             if (err) {
                 reject(err);
                 return;
@@ -25,7 +31,7 @@ const readFile = fs.readFile('./message.txt', 'utf8', (err, data) => {
     console.log(data);
 })
 
-writeFile(profileDataArgs[0])
+writeFile(dataArgs)
     .then(writeFileResponse => {
         console.log(writeFileResponse.message);
     })
