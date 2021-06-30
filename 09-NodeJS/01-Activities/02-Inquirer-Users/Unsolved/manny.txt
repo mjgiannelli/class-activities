@@ -1,0 +1,11 @@
+{
+	"name": "manny",
+	"communication": "email",
+	"languages": [
+		"Engligh",
+		"Spanish",
+		"German",
+		"Italian",
+		"Porteguese"
+	]
+}
