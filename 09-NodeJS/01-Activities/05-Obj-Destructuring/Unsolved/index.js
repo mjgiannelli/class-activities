@@ -8,7 +8,7 @@ const arya = {
 
 // Destructure the object 'arya' so the following console.log will print successfully
 //
-// YOUR CODE HERE
+const { first, last, origin } = arya;
 //
 
 console.log(first); // <= Arya
@@ -34,7 +34,7 @@ const john = {
 
 // Destructure the object 'john' so the following console.log will print successfully
 //
-// YOUR CODE HERE
+const { family: { brothers: { brother1 }, }, family: { brothers: { brother2 }, } } = john
 //
 
 console.log(brother1); // <= Rob Stark
@@ -46,7 +46,7 @@ const characters = ['Ned Stark', 'The Quiet Wolf', 'House Stark'];
 
 // Destructure the array 'characters' so the following console.log will print successfully
 //
-// YOUR CODE HERE
+const [name, alias, allegiance] = characters;
 //
 
 console.log(name, alias, allegiance); // <= Ned Stark The Quiet Wolf House Stark
@@ -58,7 +58,7 @@ const skills = 'male, Baratheon, Cersei';
 // Destructure the string 'skills' so the following console.log will print successfully
 // Hint: set variables and split
 //
-// YOUR CODE HERE
+const [gender, family, spouse] = skills.split(', ');
 //
 
 console.log(gender, family, spouse); // <= male Baratheon Cersei
