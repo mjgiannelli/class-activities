@@ -26,9 +26,8 @@ var map = function(arr, cb) {
 
 var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-var doubled = map(numbers, function(element) {
-  return element * 2;
-});
+// changed this section to arrow function
+var doubled = numbers.map(element => element * 2);
 
 console.log('2. Doubled Numbers:');
 // Prints `[ 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 ]`
@@ -48,9 +47,9 @@ var filter = function(arr, cb) {
   return result;
 };
 
-var evenNumbers = filter(numbers, function(currentElement) {
-  return currentElement % 2 === 0;
-});
+//changed this section
+var evenNumbers = numbers.filter(currentElement => currentElement % 2 === 0);
+
 
 console.log('\n3. Even Numbers:');
 // Prints `[ 2, 4, 6, 8, 10 ]`
