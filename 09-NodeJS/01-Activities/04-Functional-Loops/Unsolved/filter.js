@@ -21,12 +21,7 @@ const isPrime = num => {
 // 1. A filter that runs through the `originalArray` and creates a new array `primeArray` containing only its prime numbers
 // Use the `isPrime` function provided above to help with this
 //
-const primeArray = originalArray.filter(num => {
-  for (let i = 2; i < num; i++) {
-    if (num % i === 0) return false;
-  }
-  return num !== 1;
-});
+const primeArray = originalArray.filter(isPrime);
 //
 console.log(primeArray);
 
