@@ -18,6 +18,7 @@ class MiniBank {
     let newBalance = this.balance + addition;
     this.setBalance(newBalance);
     console.log(`Deposited: ${addition}`);
+    this.printBalance();
   }
   //
 
@@ -26,6 +27,7 @@ class MiniBank {
     let newBalance = this.balance - subtraction;
     this.setBalance(newBalance);
     console.log(`Withdrew: ${subtraction}`);
+    this.printBalance();
   }
   //
 
@@ -43,8 +45,7 @@ let tdBank = new MiniBank(100);
 tdBank.printBalance();
 // Deposit some money and then print the `bank` balance
 tdBank.deposit(35);
-tdBank.printBalance();
+
 // Withdraw some money and then print the `bank` balance
 tdBank.withdraw(60);
 
-tdBank.printBalance();
