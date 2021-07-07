@@ -7,7 +7,7 @@ class MiniBank {
       return this.balance;
     };
   }
-  
+
   // Add a `setBalance()` function
   setBalance(value) {
     this.balance = value;
@@ -43,6 +43,7 @@ let tdBank = new MiniBank(100);
 tdBank.printBalance();
 // Deposit some money and then print the `bank` balance
 tdBank.deposit(35);
+tdBank.printBalance();
 // Withdraw some money and then print the `bank` balance
 tdBank.withdraw(60);
 
