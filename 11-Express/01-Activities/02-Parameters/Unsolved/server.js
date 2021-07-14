@@ -39,14 +39,26 @@ app.get('/', (req, res) => {
 
 // Create a GET route `/api/characters` that returns all of the characters
 //
-// YOUR CODE HERE
+app.get('/api/characters', (req, res) => {
+  res.send(characters);
+});
 //
 
 // Create just one GET route that returns any given specific character
 // Iterate through the characters' routeNames to check if it matches `req.params.character`
 // If there is no such character, send back a message "No character found"
 //
-// YOUR CODE HERE
+app.get('/api/characters/:character', (req, res) => {
+  let result = req.params.character;
+
+  for (let i = 0; i < characters.length; i++) {
+    if (result === characters[i].routeName) {
+      return res.json(characters[i])
+    } else {
+      res.send('No character found');
+    }
+  }
+});
 //
 
 // Listener
