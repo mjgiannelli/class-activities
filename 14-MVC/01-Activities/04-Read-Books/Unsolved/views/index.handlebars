@@ -5,11 +5,7 @@
 <ul>
   {{#each library}}
   {{#if read}}
-  <li>
-    <p>Title: {{title}}</p>
-    <p>Author: {{author}}</p>
-    <p>Read: {{read}}</p>
-  </li>
+  {{> books/book-block}}
   {{/if}}
   {{/each}}
 </ul>
@@ -19,11 +15,7 @@
 <ul>
   {{#each library}}
   {{#unless read}}
-  <li>
-    <p>Title: {{title}}</p>
-    <p>Author: {{author}}</p>
-    <p>Read: {{read}}</p>
-  </li>
+  {{> books/book-block}}
   {{/unless}}
   {{/each}}
 </ul>
