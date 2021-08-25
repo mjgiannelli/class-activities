@@ -4,10 +4,12 @@ function person() {
   const name = 'Lee';
 
   // Return a function called `displayName()` with access to the `name` variable
-  // YOUR CODE HERE
+  return function displayName() {
+    return name
+  }
   //
 }
 
 // Invoke `displayName()` in order to print "Lee" in the console
-
-console.log(name);
+const displayName = person();
+console.log(displayName(name))
