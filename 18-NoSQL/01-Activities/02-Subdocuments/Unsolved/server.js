@@ -43,6 +43,20 @@ app.get('/api/notebooks', (req, res) => {
 // Create a new note for a notebook
 app.post('/api/notebooks/:notebookId/notes', (req, res) => {
   // Using the 'notebookId' in the params, find the notebook from the collection
+  Notebook.findOneAndUpdate(
+    { _id: req.params.notebookId },
+    { $push: { notes: req.body } },
+    { new: true, runValidators: true }
+  )
+    //
+    .then(NotebookData => {
+      if (!NotebookData) {
+        res.status(404).json({ message: 'No notebook found with this id!' });
+        return;
+      }
+      res.json(NotebookData);
+    })
+    .catch(err => res.json(err));
   // Add the 'req.body' to the 'notes' subdocument array in the notebook
   //
   // YOUR CODE HERE
@@ -52,9 +66,15 @@ app.post('/api/notebooks/:notebookId/notes', (req, res) => {
 // Delete a note from a notebook
 app.delete('/api/notebooks/:notebookId/notes/:noteId', (req, res) => {
   // Using the 'notebookId' and 'noteId' in the params, find the notebook that contains the note
-  // Remove the note from the 'notes' subdocument array in the notebook
-  //
-  // YOUR CODE HERE
+  Notebook.findOneAndUpdate(
+    { _id: req.params.notebookId },
+    { $pull: { notes: { noteId: req.params.noteId } } },
+    { new: true }
+  )
+    // Remove the note from the 'notes' subdocument array in the notebook
+    //
+    .then(dbNotebookData => res.json(dbNotebookData))
+    .catch(err => res.json(err));
   //
 });
 
