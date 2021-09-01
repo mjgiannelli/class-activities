@@ -31,15 +31,24 @@ const UserSchema = new Schema(
       type: Date,
       default: Date.now
     }
-  }
+  },
   // Set the `toJSON` schema option to use virtuals
   // Set the `id` as false
   // YOUR CODE HERE
   //
+  {
+    toJSON: {
+      virtuals: true
+    },
+    id: false
+  }
+
 );
 
 // Create a virtual property `username` that's computed from the front part of `email` before the `@` symbol.
-// YOUR CODE HERE
+UserSchema.virtual('username').get(function () {
+  return this.email.split('@')[0]
+})
 //
 
 const User = model('User', UserSchema);
