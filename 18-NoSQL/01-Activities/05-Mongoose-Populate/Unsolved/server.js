@@ -5,6 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const db = require('./models');
+const User = require('./models/User');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -66,7 +67,17 @@ app.post('/submit', ({ body }, res) => {
 app.get('/populate', (req, res) => {
   // Write the query to `find()` all of the users from the User collection
   // and `populate()` them with any associated notes.
-  // YOUR CODE HERE
+  User.find({})
+  .populate({
+    path: 'notes',
+    select: '-__v'
+  })
+  .select('-__v')
+  .then(dbUserData => res.json(dbUserData))
+  .catch(err => {
+    console.log(err);
+    res.status(400).json(err);
+  })
   //
 });
 
