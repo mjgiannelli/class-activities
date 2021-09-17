@@ -8,9 +8,18 @@ import Contact from './pages/Contact';
 function Portfolio() {
   const [currentPage, handlePageChange] = useState('Home');
 
-  const renderPage = () => {
+  const renderPage = (currentPage) => {
     // Add a switch statement that will return the appropriate component of the 'currentPage'
-    // YOUR CODE HERE
+    switch(currentPage) {
+      case 'About':
+        return <About></About>;
+      case 'Blog':
+        return <Blog></Blog>;
+      case 'Contact':
+        return <Contact></Contact>;
+      default:
+        return <Home></Home>;
+    }
     //
   };
 
@@ -20,7 +29,7 @@ function Portfolio() {
       <div>
         {
           // Render the component returned by 'renderPage()'
-          // YOUR CODE HERE
+          renderPage(currentPage)
           //
         }
       </div>
