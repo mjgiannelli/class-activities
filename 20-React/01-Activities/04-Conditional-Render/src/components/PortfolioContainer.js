@@ -8,7 +8,7 @@ import Contact from './pages/Contact';
 function Portfolio() {
   const [currentPage, handlePageChange] = useState('Home');
 
-  const renderPage = (currentPage) => {
+  const renderPage = () => {
     // Add a switch statement that will return the appropriate component of the 'currentPage'
     switch(currentPage) {
       case 'About':
@@ -29,7 +29,7 @@ function Portfolio() {
       <div>
         {
           // Render the component returned by 'renderPage()'
-          renderPage(currentPage)
+          renderPage()
           //
         }
       </div>
