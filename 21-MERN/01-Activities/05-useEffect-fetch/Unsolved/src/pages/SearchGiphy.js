@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Card,
   CardBody,
@@ -19,7 +19,9 @@ const SearchGiphy = () => {
   const [searchInput, setSearchInput] = useState('');
 
   // Use `useEffect` to run `handleSearchGiphy()` with a search term of your choice
-  // YOUR CODE HERE
+  useEffect(() => {
+    handleSearchGiphy('dog');
+  }, setSearchedGiphy)
   //
 
   const handleSearchGiphy = async query => {
