@@ -12,6 +12,10 @@ const typeDefs = gql`
     books: [Book]
     book(title: String!): Book
   }
+
+  type Mutation {
+    addBook(title: String!, author: String!, pages: Int!): Book
+  }
 `;
 
 module.exports = typeDefs;
